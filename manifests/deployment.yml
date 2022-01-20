@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: flabunskyazurecloud 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: flabunskyazurecloud
+  template:
+    metadata:
+      labels:
+        app: flabunskyazurecloud 
+    spec:
+      containers:
+        - name: flabunskyazurecloud 
+          image: felixcontreg.azurecr.io/flabunskyazurecloud
+          ports:
+          - containerPort: 80
